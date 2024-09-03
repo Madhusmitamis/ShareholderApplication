@@ -39,13 +39,14 @@ public class TransactionHistory {
     private Double price;
 
     @Column(nullable = false)
-    private Long to;
+    private Integer to;
 
     @Column(nullable = false)
-    private Long from;
+    private Integer from;
 
-    public TransactionHistory(String name, String seller, String buyer, Integer numberOfShares, Double price, Long from,
-            Long to) {
+    public TransactionHistory(String name, String seller, String buyer, Integer numberOfShares, Double price,
+            Integer from,
+            Integer to) {
         this.name = name;
         this.seller = seller;
         this.buyer = buyer;
