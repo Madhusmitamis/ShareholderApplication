@@ -6,4 +6,6 @@ import com.phz.ShareholderApplication.Model.Shareholder;
 
 public interface ShareholderRepository extends JpaRepository<Shareholder, Long> {
 
+    
+
 }
