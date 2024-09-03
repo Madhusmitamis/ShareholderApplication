@@ -18,7 +18,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .csrf(csrf -> csrf.disable()) // REMPOVE WHEN COMPLETED!, DISABLED FOR TESTING
+                .csrf(csrf -> csrf.disable()) // REMOVE WHEN COMPLETED!, DISABLED FOR TESTING
                 .authorizeHttpRequests(authorizeRequests ->
     authorizeRequests
         .requestMatchers("/owner/**").hasAnyRole("USER", "ADMIN")
