@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface OwnerService {
     List<Owner> getAllOwners();
-    Owner saveOwner(Owner owner);
+
+    Owner saveOwners(Owner owner);
 }

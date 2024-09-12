@@ -23,7 +23,7 @@ public class OwnerController {
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public String addOwner(@RequestBody Owner owner) {
-        ownerService.saveOwner(owner);
+        ownerService.saveOwners(owner);
         return "New owner is added";
     }
 
