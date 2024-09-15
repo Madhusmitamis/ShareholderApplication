@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,11 +26,14 @@ public class TransactionHistory {
     private Long id;
 
     private String name;
+    private LocalDate dateOfPurchase;
     private String seller;
     private String buyer;
-    private Integer numberOfShares;
+    private Long shareQty;
     private Double price;
+    private boolean taxReported;
     private Long shareNumberFrom;
     private Long shareNumberTo;
+    private String note;
 
 }
