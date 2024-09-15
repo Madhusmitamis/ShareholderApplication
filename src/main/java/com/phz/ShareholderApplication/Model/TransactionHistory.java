@@ -5,13 +5,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-<<<<<<< HEAD
 
-=======
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
->>>>>>> 8905ddff035b9a5de71716e0ac88e1988716f89a
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
