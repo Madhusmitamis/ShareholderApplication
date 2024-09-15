@@ -11,8 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.security.crypto.encrypt.Encryptors;
-import org.springframework.security.crypto.encrypt.TextEncryptor;
+
 
 @Entity
 @NoArgsConstructor
@@ -29,14 +28,5 @@ public class Shareholder extends AbstractPersistable<Long> {
     private String address;
     private String email;
 
-    public void setSocialSecurityNumber(String ssn) {
-        TextEncryptor encryptor = Encryptors.text("password", "5c0744940b5c369b");
-        this.encryptedSsn = encryptor.encrypt(ssn);
-    }
-
-    public String getSocialSecurityNumber() {
-        TextEncryptor encryptor = Encryptors.text("password", "5c0744940b5c369b");
-        return encryptor.decrypt(this.encryptedSsn);
-    }
-
+     
 }

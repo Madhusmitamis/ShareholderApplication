@@ -18,7 +18,7 @@ public class ShareholderController {
     @Autowired
     private ShareholderService shareholderService;
     
-    @PostMapping("/add")
+     @PostMapping("/add")
     public String addShareholder(@RequestBody Shareholder shareholder) {
         shareholderService.saveShareholder(shareholder);
         return "New shareholder is added";
