@@ -23,37 +23,12 @@ public class TransactionHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private String seller;
-
-    @Column(nullable = false)
     private String buyer;
-
-    @Column(nullable = false)
     private Integer numberOfShares;
-
-    @Column(nullable = false)
     private Double price;
-
-    @Column(nullable = false)
-    private Integer to;
-
-    @Column(nullable = false)
-    private Integer from;
-
-    public TransactionHistory(String name, String seller, String buyer, Integer numberOfShares, Double price,
-            Integer from,
-            Integer to) {
-        this.name = name;
-        this.seller = seller;
-        this.buyer = buyer;
-        this.numberOfShares = numberOfShares;
-        this.price = price;
-        this.from = from;
-        this.to = to;
-    }
+    private Long shareNumberFrom;
+    private Long shareNumberTo;
 
 }
