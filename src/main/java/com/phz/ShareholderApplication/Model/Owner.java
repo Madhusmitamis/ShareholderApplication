@@ -20,5 +20,6 @@ public class Owner extends AbstractPersistable<Long> {
     private Long id;
     private String name;
     private int numberOfShares;
+    private double sharePercentage;
 
 }

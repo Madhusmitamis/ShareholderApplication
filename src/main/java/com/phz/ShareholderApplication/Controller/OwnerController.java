@@ -40,9 +40,9 @@ public class OwnerController {
     }
 
     // DELETE request to delete an owner by ID
-    @DeleteMapping("/delete/{id}")
-    public String deleteOwner(@PathVariable Long id) {
-        ownerService.deleteOwner(id);
-        return "Owner with id " + id + " has been deleted";
-    }
+    // @DeleteMapping("/delete/{id}")
+    // public String deleteOwner(@PathVariable Long id) {
+    // ownerService.deleteOwner(id);
+    // return "Owner with id " + id + " has been deleted";
+    // }
 }

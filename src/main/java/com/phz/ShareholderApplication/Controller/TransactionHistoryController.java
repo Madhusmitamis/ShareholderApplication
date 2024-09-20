@@ -41,9 +41,9 @@ public class TransactionHistoryController {
     }
 
     // DELETE request to delete a TransactionHistory by ID
-    @DeleteMapping("/delete/{id}")
-    public String deleteTransactionHistory(@PathVariable Long id) {
-        transactionHistoryService.deleteTransactionHistory(id);
-        return "Transaction with id " + id + " has been deleted";
-    }
+    // @DeleteMapping("/delete/{id}")
+    // public String deleteTransactionHistory(@PathVariable Long id) {
+    // transactionHistoryService.deleteTransactionHistory(id);
+    // return "Transaction with id " + id + " has been deleted";
+    // }
 }
