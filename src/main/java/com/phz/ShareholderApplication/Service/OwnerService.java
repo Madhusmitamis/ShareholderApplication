@@ -29,7 +29,7 @@ public class OwnerService {
     }
 
     // Method to delete Owner by ID
-    public void deleteOwner(Long id) {
-        ownerRepository.deleteById(id);
-    }
+    // public void deleteOwner(Long id) {
+    // ownerRepository.deleteById(id);
+    // }
 }
