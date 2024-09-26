@@ -12,7 +12,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -28,5 +27,4 @@ public class Shareholder {
     private String address;
     private String email;
 
-     
 }

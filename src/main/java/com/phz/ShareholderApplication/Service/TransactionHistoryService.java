@@ -28,8 +28,4 @@ public class TransactionHistoryService {
         return transactionHistoryRepository.findById(id);
     }
 
-    // Method to delete a TransactionHistory by ID
-    // public void deleteTransactionHistory(Long id) {
-    // transactionHistoryRepository.deleteById(id);
-    // }
 }
