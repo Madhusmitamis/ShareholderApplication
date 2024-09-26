@@ -472,3 +472,166 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
 	... 63 more
+2024-09-18 21:43:39.596321+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "SHAREHOLDERS" не найдена
+Table "SHAREHOLDERS" not found; SQL statement:
+INSERT INTO shareholders (id, name, encryptedSsn, email, address) VALUES
+(1, 'John Doe', '***-**-6654', 'john.doe@mockmail.com', '1976 Oak Ave, Fairview, NY, USA'),
+(2, 'Jane Smith', '***-**-1492', 'jane.smith@mockmail.com', '4750 Birch Ln, Georgetown, CA, USA'),
+(3, 'Alice Johnson', '***-**-1918', 'alice.johnson@fakedomain.com', '3937 Cedar Dr, Riverton, TX, USA'),
+(4, 'Robert Brown', '***-**-2310', 'robert.brown@example.com', '7372 Maple St, Georgetown, NY, USA'),
+(5, 'Michael Davis', '***-**-6643', 'michael.davis@mockmail.com', '6616 Cedar Dr, Springfield, TX, USA'),
+(6, 'Sarah Wilson', '***-**-8450', 'sarah.wilson@mockmail.com', '1585 Birch Ln, Riverton, CA, USA'),
+(7, 'David Anderson', '***-**-2180', 'david.anderson@fakedomain.com', '3491 Pine Blvd, Springfield, NY, USA'),
+(8, 'Laura Thomas', '***-**-4921', 'laura.thomas@example.com', '6954 Cedar Dr, Fairview, IL, USA'),
+(9, 'James White', '***-**-8222', 'james.white@fakedomain.com', '6135 Pine Blvd, Riverton, IL, USA'),
+(10, 'Emily Harris', '***-**-3453', 'emily.harris@mockmail.com', '5351 Birch Ln, Springfield, IL, USA') [42102-224]
+2024-09-18 21:44:14.191944+03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "ENCRYPTEDSSN" не найден
+Column "ENCRYPTEDSSN" not found; SQL statement:
+INSERT INTO SHAREHOLDER (id, name, encryptedSsn, email, address) VALUES
+(1, 'John Doe', '***-**-6654', 'john.doe@mockmail.com', '1976 Oak Ave, Fairview, NY, USA'),
+(2, 'Jane Smith', '***-**-1492', 'jane.smith@mockmail.com', '4750 Birch Ln, Georgetown, CA, USA'),
+(3, 'Alice Johnson', '***-**-1918', 'alice.johnson@fakedomain.com', '3937 Cedar Dr, Riverton, TX, USA'),
+(4, 'Robert Brown', '***-**-2310', 'robert.brown@example.com', '7372 Maple St, Georgetown, NY, USA'),
+(5, 'Michael Davis', '***-**-6643', 'michael.davis@mockmail.com', '6616 Cedar Dr, Springfield, TX, USA'),
+(6, 'Sarah Wilson', '***-**-8450', 'sarah.wilson@mockmail.com', '1585 Birch Ln, Riverton, CA, USA'),
+(7, 'David Anderson', '***-**-2180', 'david.anderson@fakedomain.com', '3491 Pine Blvd, Springfield, NY, USA'),
+(8, 'Laura Thomas', '***-**-4921', 'laura.thomas@example.com', '6954 Cedar Dr, Fairview, IL, USA'),
+(9, 'James White', '***-**-8222', 'james.white@fakedomain.com', '6135 Pine Blvd, Riverton, IL, USA'),
+(10, 'Emily Harris', '***-**-3453', 'emily.harris@mockmail.com', '5351 Birch Ln, Springfield, IL, USA') [42122-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:759)
+	at org.h2.command.Parser.parseColumn(Parser.java:1190)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1175)
+	at org.h2.command.Parser.parseInsert(Parser.java:1549)
+	at org.h2.command.Parser.parsePrepared(Parser.java:719)
+	at org.h2.command.Parser.parse(Parser.java:592)
+	at org.h2.command.Parser.parse(Parser.java:564)
+	at org.h2.command.Parser.prepareCommand(Parser.java:483)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:639)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:559)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1166)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1345)
+	at org.h2.server.web.WebApp.query(WebApp.java:1143)
+	at org.h2.server.web.WebApp.query(WebApp.java:1119)
+	at org.h2.server.web.WebApp.process(WebApp.java:245)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:177)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-09-18 22:08:58.040336+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"
+Data conversion error converting "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SHAREHOLDER"("ID","ADDRESS","EMAIL","ENCRYPTED_SSN","NAME")VALUES(?,?,?,?,?) [22018-224]
+2024-09-18 22:08:58.041733+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"
+Data conversion error converting "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SHAREHOLDER"("ID","ADDRESS","EMAIL","ENCRYPTED_SSN","NAME")VALUES(?,?,?,?,?) [22018-224]
+2024-09-18 22:09:26.978967+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"
+Data conversion error converting "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SHAREHOLDER"("ID","ADDRESS","EMAIL","ENCRYPTED_SSN","NAME")VALUES(?,?,?,?,?) [22018-224]
+2024-09-18 22:09:26.979629+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLDataException: Ошибка преобразования данных при конвертации "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"
+Data conversion error converting "'' (SHAREHOLDER: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."SHAREHOLDER"("ID","ADDRESS","EMAIL","ENCRYPTED_SSN","NAME")VALUES(?,?,?,?,?) [22018-224]
+2024-09-18 22:19:52.628978+03:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "[*]OWNER"
+Syntax error in SQL statement "[*]OWNER"; SQL statement:
+OWNER [42000-224]
+2024-09-18 22:27:24.337191+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "[*]SHAREHOLDER"; ожидалось "SAVEPOINT, SCRIPT, SHUTDOWN"
+Syntax error in SQL statement "[*]SHAREHOLDER"; expected "SAVEPOINT, SCRIPT, SHUTDOWN"; SQL statement:
+SHAREHOLDER [42001-224]
+2024-09-19 21:30:21.078644+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "OWNER" уже существует
+Table "OWNER" already exists; SQL statement:
+CREATE TABLE OWNER (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  number_of_shares INT
+) [42101-224]
+2024-09-19 21:30:21.241296+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "OWNER" уже существует
+Table "OWNER" already exists; SQL statement:
+CREATE TABLE OWNER (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  number_of_shares INT
+) [42101-224]
+2024-09-19 21:30:46.482943+03:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "OWNER" уже существует
+Table "OWNER" already exists; SQL statement:
+CREATE TABLE OWNER (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255),
+  number_of_shares INT
+) [42101-224]
+2024-09-20 22:36:05.561031+03:00 jdbc[18]: null
+org.h2.message.DbException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:218)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:135)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:137)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:360)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:202)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:461)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:724)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:703)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: Незакрытое приложением соединение уничтожено сборщиком мусора
+The connection was not closed by the application and is garbage collected [90018-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
