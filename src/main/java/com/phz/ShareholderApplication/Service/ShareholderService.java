@@ -20,4 +20,17 @@ public class ShareholderService {
     public List<Shareholder> getAllShareholders() {
         return shareholderRepository.findAll();
     }
+    public void updateShareholder(Long id, Shareholder shareholder) {
+    shareholderRepository.findById(id).ifPresent(existingShareholder -> {
+    existingShareholder.setName(shareholder.getName());
+    existingShareholder.setEncryptedSsn(shareholder.getEncryptedSsn());
+    existingShareholder.setAddress(shareholder.getAddress());
+    existingShareholder.setEmail(shareholder.getEmail());
+    shareholderRepository.save(existingShareholder);
+});
+
 }
+
+}
+
+

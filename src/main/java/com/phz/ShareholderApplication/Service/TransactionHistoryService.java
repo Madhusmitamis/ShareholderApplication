@@ -29,7 +29,7 @@ public class TransactionHistoryService {
     }
 
     // Method to delete a TransactionHistory by ID
-    public void deleteTransactionHistory(Long id) {
-        transactionHistoryRepository.deleteById(id);
-    }
+    // public void deleteTransactionHistory(Long id) {
+    // transactionHistoryRepository.deleteById(id);
+    // }
 }

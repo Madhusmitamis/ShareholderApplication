@@ -18,7 +18,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Shareholder extends AbstractPersistable<Long> {
+public class Shareholder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

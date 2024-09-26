@@ -14,11 +14,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Owner extends AbstractPersistable<Long> {
+public class Owner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int numberOfShares;
+    private double sharePercentage;
 
 }
