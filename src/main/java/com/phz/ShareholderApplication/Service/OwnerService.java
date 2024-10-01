@@ -5,7 +5,6 @@ import com.phz.ShareholderApplication.Repository.OwnerRepository;
 
 import java.util.List;
 
-import org.apache.el.stream.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,16 +28,15 @@ public class OwnerService {
         return ownerRepository.findById(id).orElse(null);
     }
 
-  public void updateOwner(Long id, Owner owner) {
-    Owner existingOwner = ownerRepository.findById(id).orElse(null);
-    if (existingOwner != null) {
-        existingOwner.setName(owner.getName());
-        existingOwner.setNumberOfShares(owner.getNumberOfShares());
-        existingOwner.setSharePercentage(owner.getSharePercentage());
-        ownerRepository.save(existingOwner);
+    public void updateOwner(Long id, Owner owner) {
+        Owner existingOwner = ownerRepository.findById(id).orElse(null);
+        if (existingOwner != null) {
+            existingOwner.setName(owner.getName());
+            existingOwner.setNumberOfShares(owner.getNumberOfShares());
+            existingOwner.setSharePercentage(owner.getSharePercentage());
+            ownerRepository.save(existingOwner);
+        }
     }
-}
-
 
     // Method to delete Owner by ID
     // public void deleteOwner(Long id) {
