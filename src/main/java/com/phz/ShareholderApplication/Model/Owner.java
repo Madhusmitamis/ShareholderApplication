@@ -13,11 +13,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class Owner {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int numberOfShares;
+    private int shareQuantity;
     private double sharePercentage;
 
+    public void setShareQuantity(int shareQuantity) {
+        this.shareQuantity = shareQuantity;
+        this.sharePercentage = ((double) shareQuantity / 4070921) * 100; 
+    }
+
+    public String getSharePercentage() {
+        return String.format("%.2f", sharePercentage) + "%"; 
+    }
 }
