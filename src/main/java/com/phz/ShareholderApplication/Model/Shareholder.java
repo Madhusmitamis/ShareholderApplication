@@ -23,6 +23,7 @@ public class Shareholder {
     @MaskData
     @JsonProperty("encryptedSsn")
     private String encryptedSsn;
+    private double sharePercentage;
     private String address;
     private String email;
 

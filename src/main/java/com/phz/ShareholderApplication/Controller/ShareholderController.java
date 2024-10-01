@@ -2,6 +2,8 @@ package com.phz.ShareholderApplication.Controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,10 +32,23 @@ public class ShareholderController {
     public List<Shareholder> getAllShareholders() {
         return shareholderService.getAllShareholders();
     }
+
+    // @PutMapping("/update/{id}")
+    // public String updateShareholder(@PathVariable Long id, @RequestBody
+    // Shareholder shareholder) {
+
+    // shareholderService.updateShareholder(id, shareholder);
+    // return "Shareholder updated successfully";
+    // }
     @PutMapping("/update/{id}")
-    public String updateShareholder(@PathVariable Long id, @RequestBody Shareholder shareholder) {
-    shareholderService.updateShareholder(id, shareholder);
-    return "Shareholder updated successfully";
-}
+    public ResponseEntity<String> updateShareholder(@PathVariable Long id, @RequestBody Shareholder shareholder) {
+        // Call the updateShareholder method from the service
+        boolean isUpdated = shareholderService.updateShareholder(id, shareholder);
+        if (isUpdated) {
+            return ResponseEntity.ok("Shareholder updated successfully");
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Shareholder not found");
+        }
+    }
 
 }
