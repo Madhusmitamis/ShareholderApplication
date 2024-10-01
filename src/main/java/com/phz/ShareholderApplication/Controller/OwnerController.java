@@ -3,7 +3,7 @@ package com.phz.ShareholderApplication.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,12 +39,12 @@ public class OwnerController {
     public Owner getOwnerById(@PathVariable Long id) {
         return ownerService.getOwnerById(id);
     }
+
     @PutMapping("/update/{id}")
     public String updateOwner(@PathVariable Long id, @RequestBody Owner owner) {
-    ownerService.updateOwner(id, owner);
-    return "Owner with id " + id + " has been updated";
+        ownerService.updateOwner(id, owner);
+        return "Owner with id " + id + " has been updated";
     }
-
 
     // DELETE request to delete an owner by ID
     // @DeleteMapping("/delete/{id}")
