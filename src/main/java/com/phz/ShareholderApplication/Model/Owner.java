@@ -18,12 +18,12 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private int shareQuantity;
+    private int shareQty;
     private double sharePercentage;
 
-    public void setShareQuantity(int shareQuantity) {
-        this.shareQuantity = shareQuantity;
-        this.sharePercentage = ((double) shareQuantity / 4070921) * 100; 
+    public void setShareQuantity(int shareQty) {
+        this.shareQty = shareQty;
+        this.sharePercentage = ((double) shareQty / 4070921) * 100; 
     }
 
     public String getSharePercentage() {

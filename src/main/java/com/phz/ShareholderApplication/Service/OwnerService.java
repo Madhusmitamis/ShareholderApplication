@@ -32,8 +32,8 @@ public class OwnerService {
         Owner existingOwner = ownerRepository.findById(id).orElse(null);
         if (existingOwner != null) {
             existingOwner.setName(owner.getName());
-            existingOwner.setShareQuantity(owner.getShareQuantity());
-            existingOwner.setShareQuantity(owner.getShareQuantity());
+            existingOwner.setShareQty(owner.getShareQty());
+            existingOwner.setShareQty(owner.getShareQty());
             ownerRepository.save(existingOwner);
         }
     }

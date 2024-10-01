@@ -42,7 +42,7 @@ public class ShareholderService {
             existingShareholder.setEncryptedSsn(shareholder.getEncryptedSsn());
             existingShareholder.setAddress(shareholder.getAddress());
             existingShareholder.setEmail(shareholder.getEmail());
-            existingShareholder.setShareQuantity(shareholder.getShareQuantity());  // Replaced setSharePercentage
+            existingShareholder.setShareQty(shareholder.getShareQty());// Replaced setSharePercentage
 
             shareholderRepository.save(existingShareholder);
             updateOwnerTableIfApplicable(existingShareholder);
@@ -56,7 +56,7 @@ public class ShareholderService {
             Owner existingOwner = ownerRepository.findById(shareholder.getId()).orElse(null);
 
             if (existingOwner == null) {
-                Owner newOwner = new Owner(shareholder.getId(), shareholder.getName(), 0,
+                Owner newOwner = new Owner(shareholder.getId(), shareholder.getName(), shareholder.getShareQty(),
                         shareholder.getSharePercentage());
                 ownerRepository.save(newOwner);
             } else {

@@ -19,22 +19,22 @@ public class Shareholder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
 
     @MaskData
     @JsonProperty("encryptedSsn")
     private String encryptedSsn;
-    private int shareQuantity; 
+    private int shareQty; 
     private double sharePercentage;
     private String address;
     private String email;
     
-   public void setNumberOfShares(int shareQuantity) {
-        this.shareQuantity = shareQuantity;
-        this.sharePercentage = ((double) shareQuantity / 4070921) * 100;
+   public void setShareQty(int shareQty) {
+        this.shareQty = shareQty;
+        this.sharePercentage = ((double) shareQty / 4070921) * 100;
     }
-     public String getFormattedSharePercentage() {
-        return String.format("%.2f", sharePercentage) + "%";
-    }
+    public String getFormattedSharePercentage() {
+    return String.format("%.2f", sharePercentage) + "%"; 
+}
+
 }
