@@ -43,7 +43,7 @@ public class OwnerController {
     public String updateOwner(@PathVariable Long id, @RequestBody Owner owner) {
     ownerService.updateOwner(id, owner);
     return "Owner with id " + id + " has been updated";
-}
+    }
 
 
     // DELETE request to delete an owner by ID

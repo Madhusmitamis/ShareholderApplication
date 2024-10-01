@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import com.phz.ShareholderApplication.Model.Shareholder;
 import com.phz.ShareholderApplication.Repository.ShareholderRepository;
+
+
 import java.util.List;
 
 @Service
@@ -18,8 +20,10 @@ public class ShareholderService {
     }
 
     public List<Shareholder> getAllShareholders() {
-        return shareholderRepository.findAll();
+        List<Shareholder> shareholders = shareholderRepository.findAll();  
+        return shareholders;
     }
+
     public void updateShareholder(Long id, Shareholder shareholder) {
     shareholderRepository.findById(id).ifPresent(existingShareholder -> {
     existingShareholder.setName(shareholder.getName());

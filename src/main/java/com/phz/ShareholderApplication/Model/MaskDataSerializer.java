@@ -19,6 +19,6 @@ public class MaskDataSerializer extends JsonSerializer<String> {
         }
 
         // Mask all characters except the last 4 characters
-        return value.replaceAll(".(?=.{4})", "X");
+        return value.replaceAll(".(?=.{4})", "*");
     }
 }
