@@ -61,6 +61,11 @@ public class ShareholderService {
     // // Remove shareholder from Owner table if share percentage <= 25%
     // ownerRepository.deleteById(shareholder.getId());
     // }
+
+    public boolean checkIfEmailExists(String email) {
+        return shareholderRepository.existsByEmail(email);
+    }
+
     private void updateOwnerTableIfApplicable(Shareholder shareholder) {
         if (shareholder.getSharePercentage() > 25.0) {
             // Check for existing owner

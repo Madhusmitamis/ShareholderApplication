@@ -1,6 +1,9 @@
 package com.phz.ShareholderApplication.Controller;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -49,6 +52,13 @@ public class ShareholderController {
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Shareholder not found");
         }
+    }
+
+    // New Endpoint to Check Email Existence
+    @GetMapping("/check-email/{email}")
+    public ResponseEntity<Map<String, Boolean>> checkEmailExists(@PathVariable String email) {
+        boolean exists = shareholderService.checkIfEmailExists(email);
+        return ResponseEntity.ok(Collections.singletonMap("exists", exists));
     }
 
 }
