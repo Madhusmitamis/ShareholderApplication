@@ -15,7 +15,7 @@ public class ShareholderService {
 
     @Autowired
     private ShareholderRepository shareholderRepository;
-    
+
     @Autowired
     private OwnerRepository ownerRepository;
 
@@ -37,7 +37,7 @@ public class ShareholderService {
 
     public boolean updateShareholder(Long id, Shareholder shareholder) {
         return shareholderRepository.findById(id).map(existingShareholder -> {
-            
+
             existingShareholder.setName(shareholder.getName());
             existingShareholder.setEncryptedSsn(shareholder.getEncryptedSsn());
             existingShareholder.setAddress(shareholder.getAddress());
@@ -49,6 +49,21 @@ public class ShareholderService {
 
             return true; // Indicate success
         }).orElse(false); // If shareholder not found, return false
+    }
+
+    // private void updateOwnerTableIfApplicable(Shareholder shareholder) {
+    // if (shareholder.getSharePercentage() > 25.0) {
+    // // Add shareholder to Owner table
+    // Owner owner = new Owner(shareholder.getId(), shareholder.getName(),
+    // shareholder.getSharePercentage());
+    // ownerRepository.save(owner);
+    // } else {
+    // // Remove shareholder from Owner table if share percentage <= 25%
+    // ownerRepository.deleteById(shareholder.getId());
+    // }
+
+    public boolean checkIfEmailExists(String email) {
+        return shareholderRepository.existsByEmail(email);
     }
 
     private void updateOwnerTableIfApplicable(Shareholder shareholder) {
