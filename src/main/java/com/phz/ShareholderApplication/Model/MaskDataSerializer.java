@@ -15,10 +15,8 @@ public class MaskDataSerializer extends JsonSerializer<String> {
 
     private String maskValue(String value) {
         if (value == null || value.length() < 4) {
-            return "XXX"; // Handle cases where SSN or sensitive data is too short
+            return "XXX"; 
         }
-
-        // Mask all characters except the last 4 characters
         return value.replaceAll(".(?=.{4})", "*");
     }
 }

@@ -20,20 +20,20 @@ public class TransactionHistoryController {
     @Autowired
     private TransactionHistoryService transactionHistoryService;
 
-    // POST request to add a new TransactionHistory
+    
     @PostMapping("/add")
     public String addTransactionHistory(@RequestBody TransactionHistory transactionHistory) {
         transactionHistoryService.saveTransactionHistory(transactionHistory);
         return "New transaction is added";
     }
 
-    // GET request to get all TransactionHistories
+    
     @GetMapping("/all")
     public List<TransactionHistory> getAllTransactionHistories() {
         return transactionHistoryService.getAllTransactionHistories();
     }
 
-    // GET request to get a specific TransactionHistory by ID
+   
     @GetMapping("/{id}")
     public Optional<TransactionHistory> getTransactionHistoryById(@PathVariable Long id) {
         return transactionHistoryService.getTransactionHistoryById(id);

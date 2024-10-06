@@ -13,17 +13,17 @@ public class OwnerService {
     @Autowired
     private OwnerRepository ownerRepository;
 
-    // Method to save a new Owner
+    
     public Owner saveOwner(Owner owner) {
         return ownerRepository.save(owner);
     }
 
-    // Method to get all Owners
+   
     public List<Owner> getAllOwners() {
         return ownerRepository.findAll();
     }
 
-    // Method to find Owner by ID
+    
     public Owner getOwnerById(Long id) {
         return ownerRepository.findById(id).orElse(null);
     }
@@ -38,8 +38,5 @@ public class OwnerService {
         }
     }
 
-    // Method to delete Owner by ID
-    // public void deleteOwner(Long id) {
-    // ownerRepository.deleteById(id);
-    // }
+  
 }

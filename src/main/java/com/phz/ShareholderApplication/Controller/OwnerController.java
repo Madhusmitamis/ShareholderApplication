@@ -21,20 +21,20 @@ public class OwnerController {
     @Autowired
     private OwnerService ownerService;
 
-    // POST request to add a new owner
+    
     @PostMapping("/add")
     public String addOwner(@RequestBody Owner owner) {
         ownerService.saveOwner(owner);
         return "New owner is added";
     }
 
-    // GET request to get all owners
+   
     @GetMapping("/all")
     public List<Owner> getAllOwners() {
         return ownerService.getAllOwners();
     }
 
-    // GET request to get an owner by ID
+   
     @GetMapping("/{id}")
     public Owner getOwnerById(@PathVariable Long id) {
         return ownerService.getOwnerById(id);
@@ -46,10 +46,5 @@ public class OwnerController {
         return "Owner with id " + id + " has been updated";
     }
 
-    // DELETE request to delete an owner by ID
-    // @DeleteMapping("/delete/{id}")
-    // public String deleteOwner(@PathVariable Long id) {
-    // ownerService.deleteOwner(id);
-    // return "Owner with id " + id + " has been deleted";
-    // }
+  
 }
