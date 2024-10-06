@@ -48,7 +48,6 @@ public class ShareholderController {
         }
     }
 
-    // New Endpoint to Check Email Existence
     @GetMapping("/check-email/{email}")
     public ResponseEntity<Map<String, Boolean>> checkEmailExists(@PathVariable String email) {
         boolean exists = shareholderService.checkIfEmailExists(email);

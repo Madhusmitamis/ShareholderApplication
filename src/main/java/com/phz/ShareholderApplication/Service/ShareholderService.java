@@ -51,17 +51,6 @@ public class ShareholderService {
         }).orElse(false); 
     }
 
-    // private void updateOwnerTableIfApplicable(Shareholder shareholder) {
-    // if (shareholder.getSharePercentage() > 25.0) {
-    // // Add shareholder to Owner table
-    // Owner owner = new Owner(shareholder.getId(), shareholder.getName(),
-    // shareholder.getSharePercentage());
-    // ownerRepository.save(owner);
-    // } else {
-    // // Remove shareholder from Owner table if share percentage <= 25%
-    // ownerRepository.deleteById(shareholder.getId());
-    // }
-
     public boolean checkIfEmailExists(String email) {
         return shareholderRepository.existsByEmail(email);
     }
