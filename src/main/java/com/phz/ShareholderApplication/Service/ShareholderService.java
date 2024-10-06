@@ -32,6 +32,7 @@ public class ShareholderService {
 
     public List<Shareholder> getAllShareholders() {
         List<Shareholder> shareholders = shareholderRepository.findAll();
+        System.out.println("Retrieved shareholders: " + shareholders);
         return shareholders;
     }
 
@@ -50,17 +51,6 @@ public class ShareholderService {
             return true; // Indicate success
         }).orElse(false); // If shareholder not found, return false
     }
-
-    // private void updateOwnerTableIfApplicable(Shareholder shareholder) {
-    // if (shareholder.getSharePercentage() > 25.0) {
-    // // Add shareholder to Owner table
-    // Owner owner = new Owner(shareholder.getId(), shareholder.getName(),
-    // shareholder.getSharePercentage());
-    // ownerRepository.save(owner);
-    // } else {
-    // // Remove shareholder from Owner table if share percentage <= 25%
-    // ownerRepository.deleteById(shareholder.getId());
-    // }
 
     public boolean checkIfEmailExists(String email) {
         return shareholderRepository.existsByEmail(email);
