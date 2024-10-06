@@ -42,17 +42,17 @@ public class ShareholderService {
             existingShareholder.setEncryptedSsn(shareholder.getEncryptedSsn());
             existingShareholder.setAddress(shareholder.getAddress());
             existingShareholder.setEmail(shareholder.getEmail());
-            existingShareholder.setShareQty(shareholder.getShareQty());// Replaced setSharePercentage
+            existingShareholder.setShareQty(shareholder.getShareQty());
 
             shareholderRepository.save(existingShareholder);
             updateOwnerTableIfApplicable(existingShareholder);
 
-            return true; // Indicate success
-        }).orElse(false); // If shareholder not found, return false
+            return true; 
+        }).orElse(false); 
     }
 
     private void updateOwnerTableIfApplicable(Shareholder shareholder) {
-        if (shareholder.getSharePercentage() > 25.0) {
+        if (shareholder.getSharePercentage() >= 25.0) {
             Owner existingOwner = ownerRepository.findById(shareholder.getId()).orElse(null);
 
             if (existingOwner == null) {

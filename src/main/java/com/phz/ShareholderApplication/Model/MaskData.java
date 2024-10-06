@@ -8,9 +8,9 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD) // Apply this annotation to fields only
+@Target(ElementType.FIELD) 
 @JacksonAnnotationsInside
-@JsonSerialize(using = MaskDataSerializer.class) // Specify the custom serializer
+@JsonSerialize(using = MaskDataSerializer.class) 
 public @interface MaskData {
 
 }

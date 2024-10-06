@@ -33,16 +33,10 @@ public class ShareholderController {
         return shareholderService.getAllShareholders();
     }
 
-    // @PutMapping("/update/{id}")
-    // public String updateShareholder(@PathVariable Long id, @RequestBody
-    // Shareholder shareholder) {
-
-    // shareholderService.updateShareholder(id, shareholder);
-    // return "Shareholder updated successfully";
-    // }
+    
     @PutMapping("/update/{id}")
     public ResponseEntity<String> updateShareholder(@PathVariable Long id, @RequestBody Shareholder shareholder) {
-        // Call the updateShareholder method from the service
+       
         boolean isUpdated = shareholderService.updateShareholder(id, shareholder);
         if (isUpdated) {
             return ResponseEntity.ok("Shareholder updated successfully");
