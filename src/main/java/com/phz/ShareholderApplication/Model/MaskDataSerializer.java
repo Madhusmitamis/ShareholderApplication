@@ -14,9 +14,9 @@ public class MaskDataSerializer extends JsonSerializer<String> {
     }
 
     private String maskValue(String value) {
-        if (value == null || value.length() < 4) {
-            return "XXX"; 
+        if (value == null || value.length() < 2) {
+            return "XXX";
         }
-        return value.replaceAll(".(?=.{4})", "*");
+        return value.replaceAll(".(?=.{2})", "*");
     }
 }
