@@ -24,6 +24,10 @@ public class TransactionHistory {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String sellerType; 
+    private Long sellerId;     
+    private String buyerType;  
+    private Long buyerId;      
     private String seller;
     private String buyer;
     private LocalDate dateOfPurchase;
